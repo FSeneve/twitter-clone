@@ -104,7 +104,7 @@ const logout = async (req, res)=>{
     }
 }
 
-const getUserProfile = async (req, res)=>{
+const getMe = async (req, res)=>{
     try {
         const user = await User.findById(req.user._id).select("-password");
         res.status(200).json(user);
@@ -114,4 +114,4 @@ const getUserProfile = async (req, res)=>{
     }
 }
 
-export { signup, login, logout, getUserProfile }
+export { signup, login, logout, getMe }
